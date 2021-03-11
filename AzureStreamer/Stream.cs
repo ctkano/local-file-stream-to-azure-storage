@@ -47,20 +47,5 @@ namespace AzureStreamer
                 blobClient.Upload(fileStream);
             }
         }
-
-        /// <summary>
-        /// Get Azure storage access information by segregating the Shared Access Signature URI (SAS URI)
-        /// </summary>
-        /// <param name="sas_uri">Shared Access Signature URI (SAS URI)</param>
-        /// <returns>Azure storage access information</returns>
-        private static AzureAccessObjects SegretateSASURI(string sas_uri)
-        {            
-            return new AzureAccessObjects()
-            {
-                URI = sas_uri.Split('?')[0],
-                Token = sas_uri.Split('?')[1]
-            };
-            //Useful reference: https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview#sas-token
-        }
     }
 }

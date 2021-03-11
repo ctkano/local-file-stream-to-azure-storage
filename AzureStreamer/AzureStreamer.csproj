@@ -84,7 +84,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Objects\AzureAccessObjects.cs" />
     <Compile Include="Stream.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
