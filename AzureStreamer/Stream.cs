@@ -16,9 +16,9 @@ namespace AzureStreamer
         /// Streaming to Azure Blob Container using Shared Access Signature URI (SAS URI)
         /// </summary>
         /// <param name="sas_uri">Shared Access Signature URI (SAS URI)</param>
-        /// <param name="file_name">Local File Name</param>
-        /// <param name="file_path">Local File Path</param>
-        public void SharedAccessSignatureURI(string sas_uri, string file_name, string file_path)
+        /// <param name="blob">Blob Name / Path</param>
+        /// <param name="file_path">Local File Path with File Name and Extension</param>
+        public static void SharedAccessSignatureURI(string sas_uri, string blob, string file_path)
         {
             //Azure storage access information
             AzureAccessObjects azureAccessObjects = SegretateSASURI(sas_uri);
@@ -30,7 +30,7 @@ namespace AzureStreamer
             CloudBlobContainer container = new CloudBlobContainer(new Uri(azureAccessObjects.URI), credentials);
 
             //File name and extension or file path for Azure Blob Storage
-            CloudBlockBlob blockBlob = container.GetBlockBlobReference(file_name);
+            CloudBlockBlob blockBlob = container.GetBlockBlobReference(blob);
 
             //Create or overwrite the blob with contents from the local file
             using (var fileStream = System.IO.File.OpenRead(file_path))
@@ -44,9 +44,9 @@ namespace AzureStreamer
         /// </summary>
         /// <param name="storage_account">Azure Storage Account Name</param>
         /// <param name="blob_container">Blob Container Name</param>
-        /// <param name="file_name">Local File Name</param>
+        /// <param name="blob">Blob Name / Path</param>
         /// <param name="file_path">Local File Path</param>
-        public void ConnectionString(string storage_account, string blob_container, string file_name, string file_path)
+        public static void ConnectionString(string storage_account, string blob_container, string blob, string file_path)
         {
             //Connection string from the storage account
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storage_account);
@@ -58,7 +58,7 @@ namespace AzureStreamer
             CloudBlobContainer container = blobClient.GetContainerReference(blob_container);
 
             //File name and extension or file path for Azure Blob Storage
-            CloudBlockBlob blockBlob = container.GetBlockBlobReference(file_name);
+            CloudBlockBlob blockBlob = container.GetBlockBlobReference(blob);
 
             //Create or overwrite the blob with contents from the local file
             using (var fileStream = System.IO.File.OpenRead(file_path))
