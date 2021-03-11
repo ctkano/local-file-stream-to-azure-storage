@@ -1,5 +1,4 @@
 ﻿using Azure.Storage.Blobs;
-using AzureStreamer.Objects;
 using System;
 
 namespace AzureStreamer
