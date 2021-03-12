@@ -20,7 +20,7 @@ You can create an automated project that collects files from a variety of source
 
 ## Usage
 To upload file stream to Azure Blob Container using Shared Access Signature URI (SAS URI):
-```
+```C#
 //Shared Access Signature URI (SAS URI).
 string sas_uri = "<sas_uri>";
 
@@ -39,7 +39,7 @@ bool return = AzureStreamer.BlobStorageUploadFileStream.SharedAccessSignatureURI
 ```
 
 To upload file stream to Azure Blob Container using Storage Account's Connection String:
-```
+```C#
 //Storage Account's Connection String.
 string connection_string = "<connection_string>";
 
