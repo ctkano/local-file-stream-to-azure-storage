@@ -17,3 +17,45 @@ You can create an automated project that collects files from a variety of source
 
 ## Platform and Version
 * .NET Framework 4.8
+
+## Usage
+To upload file stream to Azure Blob Container using Shared Access Signature URI (SAS URI)
+```
+//Shared Access Signature URI (SAS URI).
+string sas_uri = "<sas_uri>";
+
+//File Name and/or Path with Virtual Directory and File Name with Extension, that will be created in the Blob Container.
+string blob_path = "sample-blob/sample-file.txt";
+
+//Local File Path with File Name and Extension.
+string file_path = "C:\\Main_Directory\\File_Directory\\sample-file.txt";
+
+//Flag to indicate if it is allowed the file overwrite in case of existance in the blob storage.
+//When false, if a blob_path alread exists in the blob storage, it will return the following Status: 409 (The specified blob already exists.) and ErrorCode: BlobAlreadyExists.
+//When true, the existing blob_path will be overwritten in the blob storage and no error is returned.
+bool allow_overwrite = true;
+
+bool return = AzureStreamer.BlobStorageUploadFileStream.SharedAccessSignatureURI(sas_uri, blob_path, file_path, allow_overwrite);
+```
+
+To upload file stream to Azure Blob Container using Storage Account's Connection String:
+```
+//Storage Account's Connection String.
+string connection_string = "<connection_string>";
+
+//Azure Blob Container Name.
+string blob_container_name = "blob_container_name";
+
+//File Name and/or Path with Virtual Directory and File Name with Extension, that will be created in the Blob Container.
+string blob_path = "sample-blob/sample-file.txt";
+
+//Local File Path with File Name and Extension.
+string file_path = "C:\\Main_Directory\\File_Directory\\sample-file.txt";
+
+//Flag to indicate if it is allowed the file overwrite in case of existance in the blob storage.
+//When false, if a blob_path alread exists in the blob storage, it will return the following Status: 409 (The specified blob already exists.) and ErrorCode: BlobAlreadyExists.
+//When true, the existing blob_path will be overwritten in the blob storage and no error is returned.
+bool allow_overwrite = true;
+
+bool return = AzureStreamer.BlobStorageUploadFileStream.ConnectionString(connection_string, blob_container_name, blob_path, file_path, allow_overwrite);
+```
