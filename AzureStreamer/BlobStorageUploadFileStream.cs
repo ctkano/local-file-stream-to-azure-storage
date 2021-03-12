@@ -3,7 +3,7 @@ using System;
 
 namespace AzureStreamer
 {
-    public class Stream
+    public class BlobStorageUploadFileStream
     {
         /// <summary>
         /// Streaming to Azure Blob Container using Shared Access Signature URI (SAS URI)
