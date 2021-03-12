@@ -1,5 +1,5 @@
 # Local File Stream To Azure Storage
-Local file stream to azure storage is a class library to help automating the upload local files stream to Azure Storage. 
+Local file stream to azure storage is a simple class library to help automating the upload local files stream to Azure Storage. 
 
 Files extracted from sources (such as from data base) and stored in a local computer, can be uploaded to Azure Storage dinamically and automated, by referencing this class library in an automate project.
 
