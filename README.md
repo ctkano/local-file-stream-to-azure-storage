@@ -63,4 +63,4 @@ bool return = AzureStreamer.BlobStorageUploadFileStream.ConnectionString(connect
 ```
 
 ## Useful information
-For more detail and information, please refer :point_right:: [Azure Storage Blobs client library for .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs)
+For more details and information, please refer :point_right:: [Azure Storage Blobs client library for .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs)
