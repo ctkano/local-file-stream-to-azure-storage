@@ -35,6 +35,7 @@ string file_path = "C:\\Main_Directory\\File_Directory\\sample-file.txt";
 //When true, the existing blob_path will be overwritten in the blob storage and no error is returned.
 bool allow_overwrite = true;
 
+//If successful it will return true. If not, an error will be thrown.
 bool return = AzureStreamer.BlobStorageUploadFileStream.SharedAccessSignatureURI(sas_uri, blob_path, file_path, allow_overwrite);
 ```
 
@@ -57,5 +58,6 @@ string file_path = "C:\\Main_Directory\\File_Directory\\sample-file.txt";
 //When true, the existing blob_path will be overwritten in the blob storage and no error is returned.
 bool allow_overwrite = true;
 
+//If successful it will return true. If not, an error will be thrown.
 bool return = AzureStreamer.BlobStorageUploadFileStream.ConnectionString(connection_string, blob_container_name, blob_path, file_path, allow_overwrite);
 ```
