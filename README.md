@@ -61,3 +61,6 @@ bool allow_overwrite = true;
 //If successful it will return true. If not, an error will be thrown.
 bool return = AzureStreamer.BlobStorageUploadFileStream.ConnectionString(connection_string, blob_container_name, blob_path, file_path, allow_overwrite);
 ```
+
+## Useful information
+For more detail and information, please refer :point_right:: [Azure Storage Blobs client library for .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs)
