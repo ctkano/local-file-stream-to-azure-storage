@@ -18,7 +18,7 @@ You can create an automated project that collects files from a variety of source
 ## Platform and Version
 * .NET Framework 4.8
 
-## Usage
+## Example of Usage
 To upload file stream to Azure Blob Container using Shared Access Signature URI (SAS URI):
 ```C#
 //Shared Access Signature URI (SAS URI).
